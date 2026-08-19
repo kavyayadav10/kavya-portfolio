@@ -131,13 +131,23 @@ function App() {
             </a>
 
             <a
-              href="/kavya-resume-2026.pdf"
-              download="Kavya-Yadav-Resume.pdf"
-              className="secondary-btn"
-            >
-              Download Resume
-              <ArrowUpRight size={16} />
-            </a>
+  href="/kavya-resume-2026.pdf"
+  target="_blank"
+  rel="noreferrer"
+  className="secondary-btn"
+>
+  View Resume
+  <ArrowUpRight size={16} />
+</a>
+
+<a
+  href="/kavya-resume-2026.pdf"
+  download="Kavya-Yadav-Resume.pdf"
+  className="secondary-btn"
+>
+  Download Resume
+  <ArrowUpRight size={16} />
+</a>
 
             <a href="#contact" className="secondary-btn">
               Get in touch
