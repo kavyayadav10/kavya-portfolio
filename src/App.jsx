@@ -1,3 +1,4 @@
+
 import {
   ArrowUpRight,
   Mail,
@@ -15,7 +16,15 @@ const projects = [
     title: "AgencyBrain AI",
     description:
       "AI-powered marketing intelligence platform for agencies. It combines SEO analysis, content optimization, keyword intelligence, competitor analysis, AI insights, and automated reporting.",
-    tech: ["Python", "FastAPI", "React", "MongoDB", "JWT" , "NLP", "AI/ML"],
+    tech: [
+      "Python",
+      "FastAPI",
+      "React",
+      "MongoDB",
+      "JWT",
+      "NLP",
+      "AI/ML",
+    ],
     github: "https://github.com/kavyayadav10/AgencyBrainAI",
     featured: true,
   },
@@ -120,17 +129,15 @@ function App() {
               View Projects
               <ArrowUpRight size={16} />
             </a>
-                    <a
-  href="/kavya-resume-2026.pdf"
-  download="Kavya-Yadav-Resume.pdf"
-  className="secondary-btn"
->
-  Download Resume
-  <ArrowUpRight size={16} />
-</a>
-          View Resume
-          <ArrowUpRight size={16} />
-        </a>
+
+            <a
+              href="/kavya-resume-2026.pdf"
+              download="Kavya-Yadav-Resume.pdf"
+              className="secondary-btn"
+            >
+              Download Resume
+              <ArrowUpRight size={16} />
+            </a>
 
             <a href="#contact" className="secondary-btn">
               Get in touch
@@ -229,9 +236,11 @@ function App() {
         <div className="projects-grid">
           {projects.map((project) => (
             <article
-              className={`project-card ${
-                project.featured ? "featured" : ""
-              }`}
+              className={
+                project.featured
+                  ? "project-card featured"
+                  : "project-card"
+              }
               key={project.title}
             >
               <div className="project-number">{project.number}</div>
@@ -300,9 +309,7 @@ function App() {
               <span>Artificial Intelligence & Machine Learning</span>
             </h2>
 
-            <p className="hero-description">
-              LJ University
-            </p>
+            <p className="hero-description">LJ University</p>
           </div>
 
           <div className="education-mark">AI/ML</div>
@@ -329,7 +336,7 @@ function App() {
             target="_blank"
             rel="noreferrer"
           >
-            in LinkedIn
+            LinkedIn
           </a>
 
           <a
@@ -337,11 +344,10 @@ function App() {
             target="_blank"
             rel="noreferrer"
           >
-            GH GitHub
+            GitHub
           </a>
         </div>
       </section>
-      
 
       {/* FOOTER */}
       <footer>
@@ -353,3 +359,4 @@ function App() {
 }
 
 export default App;
+
