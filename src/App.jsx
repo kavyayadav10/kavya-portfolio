@@ -121,7 +121,7 @@ function App() {
               <ArrowUpRight size={16} />
             </a>
                     <a
-          href="/resume.pdf"
+          href="/kavya-resume-2026.pdf"
           target="_blank"
           rel="noreferrer"
           className="secondary-btn"
