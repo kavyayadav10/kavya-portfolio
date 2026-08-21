@@ -1,4 +1,3 @@
-
 import {
   ArrowUpRight,
   Mail,
@@ -13,6 +12,23 @@ import "./index.css";
 const projects = [
   {
     number: "01",
+    title: "AI Sports Performance Analyzer",
+    description:
+      "AI-powered football performance analysis system currently in development. It uses YOLO and OpenCV to detect and analyze players from football match footage, with player tracking, movement analysis, and performance metrics planned as the project evolves.",
+    tech: [
+      "Python",
+      "YOLO",
+      "Ultralytics",
+      "OpenCV",
+      "Computer Vision",
+      "AI/ML",
+    ],
+    github: "#",
+    status: "IN DEVELOPMENT",
+    featured: true,
+  },
+  {
+    number: "02",
     title: "AgencyBrain AI",
     description:
       "AI-powered marketing intelligence platform for agencies. It combines SEO analysis, content optimization, keyword intelligence, competitor analysis, AI insights, and automated reporting.",
@@ -26,10 +42,9 @@ const projects = [
       "AI/ML",
     ],
     github: "https://github.com/kavyayadav10/AgencyBrainAI",
-    featured: true,
   },
   {
-    number: "02",
+    number: "03",
     title: "Footie Bay",
     description:
       "A football e-commerce website where users can browse and purchase football T-shirts across different ages and sizes.",
@@ -38,7 +53,7 @@ const projects = [
       "https://github.com/kavyayadav10/Footie-bay-ecommerce-web-using-react-and-express-js-",
   },
   {
-    number: "03",
+    number: "04",
     title: "EcoCart",
     description:
       "Django-based e-commerce application built around a structured online shopping experience with product browsing and purchasing functionality.",
@@ -52,7 +67,14 @@ const skills = [
   {
     icon: <Brain size={24} />,
     title: "AI & Machine Learning",
-    items: ["Python", "Generative AI", "NLP", "Machine Learning"],
+    items: [
+      "Python",
+      "Machine Learning",
+      "Computer Vision",
+      "Generative AI",
+      "YOLO",
+      "NLP",
+    ],
   },
   {
     icon: <Code2 size={24} />,
@@ -67,7 +89,7 @@ const skills = [
   {
     icon: <Database size={24} />,
     title: "Data & Tools",
-    items: ["MongoDB", "SQLite", "Git", "GitHub"],
+    items: ["MongoDB", "SQLite", "Git", "GitHub", "OpenCV", "Ultralytics"],
   },
 ];
 
@@ -111,7 +133,7 @@ function App() {
       {/* HERO */}
       <main id="home" className="hero">
         <div className="hero-content">
-          <p className="eyebrow">AI / ML DEVELOPER</p>
+          <p className="eyebrow">AI / ML STUDENT</p>
 
           <h1>
             Python, AI &
@@ -120,8 +142,8 @@ function App() {
 
           <p className="hero-description">
             I'm Kavya Yadav, an Artificial Intelligence & Machine Learning
-            student focused on Python, Generative AI, backend development,
-            and building practical applications.
+            student focused on Python, Machine Learning, Computer Vision,
+            Generative AI, and building practical AI-powered applications.
           </p>
 
           <div className="hero-buttons">
@@ -131,23 +153,23 @@ function App() {
             </a>
 
             <a
-  href="/kavya-resume-2026.pdf"
-  target="_blank"
-  rel="noreferrer"
-  className="secondary-btn"
->
-  View Resume
-  <ArrowUpRight size={16} />
-</a>
+              href="/kavya-resume-2026.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="secondary-btn"
+            >
+              View Resume
+              <ArrowUpRight size={16} />
+            </a>
 
-<a
-  href="/kavya-resume-2026.pdf"
-  download="Kavya-Yadav-Resume.pdf"
-  className="secondary-btn"
->
-  Download Resume
-  <ArrowUpRight size={16} />
-</a>
+            <a
+              href="/kavya-resume-2026.pdf"
+              download="Kavya-Yadav-Resume.pdf"
+              className="secondary-btn"
+            >
+              Download Resume
+              <ArrowUpRight size={16} />
+            </a>
 
             <a href="#contact" className="secondary-btn">
               Get in touch
@@ -156,10 +178,12 @@ function App() {
 
           <div className="hero-stack">
             <span>Python</span>
+            <span>Machine Learning</span>
+            <span>Computer Vision</span>
+            <span>YOLO</span>
             <span>Generative AI</span>
             <span>FastAPI</span>
             <span>React</span>
-            <span>MongoDB</span>
           </div>
         </div>
 
@@ -191,9 +215,15 @@ function App() {
             </p>
 
             <p>
-              I've worked with Python, Generative AI, FastAPI, Django, React,
-              MongoDB and REST APIs, with a current focus on AI-powered
-              applications and backend development.
+              I've worked with Python, Machine Learning, Generative AI,
+              Computer Vision, YOLO, FastAPI, Django, React, MongoDB and REST
+              APIs, with a current focus on AI-powered applications.
+            </p>
+
+            <p>
+              I'm currently developing a football performance analysis system
+              using YOLO and OpenCV to detect and analyze players from match
+              footage.
             </p>
 
             <p>
@@ -258,9 +288,15 @@ function App() {
               <div className="project-top">
                 <h3>{project.title}</h3>
 
-                {project.featured && (
-                  <span className="featured-tag">FEATURED</span>
-                )}
+                <div className="project-tags">
+                  {project.status && (
+                    <span className="status-tag">{project.status}</span>
+                  )}
+
+                  {project.featured && (
+                    <span className="featured-tag">FEATURED</span>
+                  )}
+                </div>
               </div>
 
               <p>{project.description}</p>
@@ -271,15 +307,23 @@ function App() {
                 ))}
               </div>
 
-              <a
-                className="project-link"
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                View on GitHub
-                <ExternalLink size={14} />
-              </a>
+              {project.github !== "#" && (
+                <a
+                  className="project-link"
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View on GitHub
+                  <ExternalLink size={14} />
+                </a>
+              )}
+
+              {project.github === "#" && (
+                <span className="project-link project-link-disabled">
+                  GitHub repository coming soon
+                </span>
+              )}
             </article>
           ))}
         </div>
@@ -369,4 +413,3 @@ function App() {
 }
 
 export default App;
-
